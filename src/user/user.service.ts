@@ -2,10 +2,11 @@ import { HttpException, Inject, Injectable } from '@nestjs/common';
 import { User } from '@prisma/client';
 import { WINSTON_MODULE_PROVIDER } from 'nest-winston';
 import { ValidationService } from 'src/common/validation.service';
-import { PrismaService } from 'src/prisma.service';
+
 import { Logger } from 'winston';
 import { UserValidation } from './user.validation';
 import * as bcrypt from 'bcrypt';
+import { PrismaService } from 'src/common/prisma.service';
 @Injectable()
 export class UserService {
   constructor(
